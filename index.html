@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>zoomy</title>
+        <link href="https://unpkg.com/basscss@7.1.1/css/basscss.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/text-path.css">
+        <style>
+            html {
+                font-family: 'Arvo', serif;
+            }
+            .path-output {
+                height: 100px;
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="clearfix">
+                <h2>How to use</h2>
+                
+                <ol>
+                    <li>Enter some text here <input type="text" class="text-to-move field" value="howdy partners!"/> that you want to move along a path</li>
+                    <li>If you want, change the speed increment (I'm not your dad, but probably don't)</label><input type="text" class="speed-increment field" value="50"/></li>
+                    <li>Click the <input type="button" class="listening-start-trigger btn btn-primary" value="start listening" /> button</li>
+                    <li>Move your mouse to where you want the text to start from and click the mouse button to start recording a path</li>
+                    <li>Move the mouse in the path you want</li>
+                    <li>Click the mouse button to stop recording the path. The path will be outputted here <textarea class="path-output field block"></textarea></li>
+                    <li>Click the <input type="button" class="test-button-trigger btn btn-primary" value="test path" /> to see the text more along the path</li>
+                </ol>
+
+                <h2>How to put on a website (????)</h2>
+
+                <ol>
+                    <li>Create your path using the above instructions</li>
+                    <li>Add jquery, text-path.js, and text-path.css to your website</li>
+                    <li>Add this javascript
+                        <pre style="overflow: hidden;">
+&lt;script&gt;
+var player = new TextPathPlayer();
+var path = [YOUR PATH HERE];
+var speed = 50;
+var text = "howdy partners!";
+player.PlayPath(path,speed, text);
+&lt;/script&gt;
+                        </pre>
+                    </li>
+                </ol>
+                
+
+            </div>
+          </div>
+
+        <script src="scripts/jquery-3.3.1.min.js"></script>
+        <script src="scripts/text-path.js"></script>
+    </body>
+</html>
